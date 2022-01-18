@@ -1,11 +1,9 @@
 package selenium.seleniumtest;
 
+import com.google.common.collect.Ordering;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import selenium.utilities.TestBase;
 
@@ -51,10 +49,16 @@ public class HepsiBurada extends TestBase {
         Thread.sleep(3000);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         Thread.sleep(5000);
+  /*   JavascriptExecutor je = (JavascriptExecutor) driver;
+     ////div[@class='paginatorStyle-label']
+
+     WebElement products = driver.findElement(By.xpath("//div[@class='pagination']/ul/li[last()]"));
+     je.executeScript("arguments[0].scrollIntoView(true);", products);*/
 
         List<WebElement> sonyList = driver.findElements(By.xpath("//*[@data-test-id='product-card-image-container']"));
 
-        Assert.assertEquals(78, sonyList.size());
+        Assert.assertEquals(79, sonyList.size());
+
 
 
     }
